@@ -1,0 +1,17 @@
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Cargo will create a Cargo.lock to lockdown these versions for us to provide consistent builds
+# If we want to update to the latest patch versions, run cargo update. If rand releases a new patch,
+# for example, 0.8.4, running cargo update will save that new version into the Cargo.lock. But if they
+# released 0.9.0, it won't grab that since it violatee the range specified in this file. If we want to
+# start using the new minor version, we'd need to modify this file to be "0.9.0"
+
+[dependencies]
+# By default, = "0.8.3" allows Cargo to pull the latest patch (i.e., >= 0.8.3 but < 0.9.0)
+# This ensures APIs won't change
+rand = "0.8.3"
